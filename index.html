@@ -277,7 +277,7 @@ marathons, cycling events, badminton and athletic lifestyle.
 </div>
 
 <div class="stat">
-<h3 class="counter" data-target="6">0</h3>
+<h3 class="counter" data-target="10">0</h3>
 <p>Brand Collaborations</p>
 </div>
 
@@ -329,11 +329,13 @@ height="480">
 <div class="slide">Hombria</div>
 <div class="slide">Timber Tribe</div>
 <div class="slide">Dark Obsession Tea</div>
+<div class="slide">iFinish</div>
+<div class="slide">BCF Official</div>
+<div class="slide">Beast Drive</div>
 
 <div class="slide">Wiselife</div>
 <div class="slide">Madno</div>
 <div class="slide">Dairy Day</div>
-<div class="slide">Hombria</div>
 
 </div>
 
@@ -420,8 +422,6 @@ I collaborate with brands in fitness, sports, wellness and lifestyle space.
 
 <script>
 
-/* COUNTER ANIMATION */
-
 const counters=document.querySelectorAll('.counter');
 
 counters.forEach(counter=>{
@@ -438,7 +438,7 @@ if(c<target){
 counter.innerText=Math.ceil(c+increment);
 setTimeout(updateCounter,10);
 }else{
-counter.innerText=target;
+counter.innerText=target+"+";
 }
 
 };
