@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +13,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -30,10 +30,6 @@ background:black;
 position:sticky;
 top:0;
 z-index:1000;
-}
-
-header h2{
-letter-spacing:2px;
 }
 
 nav a{
@@ -70,11 +66,11 @@ filter:brightness(40%);
 
 .hero-content h1{
 font-size:60px;
-margin-bottom:10px;
 }
 
 .hero-content p{
 font-size:20px;
+margin-top:10px;
 }
 
 .hero-content a{
@@ -85,7 +81,6 @@ background:#ff3c00;
 border-radius:5px;
 color:white;
 text-decoration:none;
-font-weight:bold;
 }
 
 section{
@@ -97,13 +92,25 @@ margin-bottom:25px;
 font-size:32px;
 }
 
-.about p{
-max-width:700px;
-opacity:0.9;
+.stats{
+display:flex;
+justify-content:space-around;
+text-align:center;
+flex-wrap:wrap;
+margin-top:40px;
 }
 
-.achievements ul li{
-margin-bottom:10px;
+.stat{
+margin:20px;
+}
+
+.stat h3{
+font-size:45px;
+color:#ff3c00;
+}
+
+.stat p{
+opacity:0.8;
 }
 
 .brands{
@@ -138,10 +145,6 @@ border-radius:10px;
 max-width:700px;
 }
 
-.work ul{
-margin-top:10px;
-}
-
 .work li{
 margin-bottom:8px;
 }
@@ -171,7 +174,6 @@ border:none;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -182,6 +184,7 @@ border:none;
 
 <nav>
 <a href="#about">About</a>
+<a href="#stats">Stats</a>
 <a href="#journey">Journey</a>
 <a href="#brands">Brands</a>
 <a href="#gallery">Gallery</a>
@@ -210,13 +213,13 @@ View Instagram
 
 </section>
 
-<section id="about" class="about">
+<section id="about">
 
 <h2>About Me</h2>
 
 <p>
-I'm Chirag Lanjewar — a fitness and lifestyle content creator passionate about running, marathons,
-cycling events, badminton and athletic lifestyle.
+I'm Chirag Lanjewar — a fitness and lifestyle content creator passionate about
+running, marathons, cycling events, badminton and athletic lifestyle.
 I share race experiences, training routines and wellness journeys with my audience.
 </p>
 
@@ -226,16 +229,41 @@ I share race experiences, training routines and wellness journeys with my audien
 
 </section>
 
-<section id="journey" class="achievements">
+<section id="stats">
+
+<h2>Athlete Stats</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3 class="counter" data-target="16">0</h3>
+<p>Race Events</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="600">0</h3>
+<p>KM Run</p>
+</div>
+
+<div class="stat">
+<h3 class="counter" data-target="6">0</h3>
+<p>Brand Collaborations</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="journey">
 
 <h2>Running Journey</h2>
 
 <p>
 My running journey started in October 2024 during the Salesforce Run where I completed my first 5K race.
-Since then I have participated in multiple endurance events.
+Since then I have participated in multiple endurance events including marathons and obstacle races.
 </p>
 
-<ul>
+<ul style="margin-top:20px">
 
 <li>16+ race events completed</li>
 <li>10K and Half Marathon races</li>
@@ -246,10 +274,6 @@ Since then I have participated in multiple endurance events.
 <li>Ethnic Run – fitness meets fashion & culture</li>
 
 </ul>
-
-<p style="margin-top:20px;">
-View my running journey:
-</p>
 
 <iframe
 src="https://www.instagram.com/p/DVECWRAEovW/embed"
@@ -274,11 +298,7 @@ height="480">
 
 </div>
 
-<p style="margin-top:20px;">
-
-Creator Marketplace Profile:
-
-<br><br>
+<p style="margin-top:20px">
 
 <a href="https://collabstr.com/chiraglanjewar" target="_blank">
 View Collabstr Profile
@@ -295,26 +315,11 @@ View Collabstr Profile
 <div class="gallery">
 
 <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce">
-
 <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5">
-
 <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf">
-
 <img src="https://images.unsplash.com/photo-1546484959-f2f6fda9e7c2">
 
 </div>
-
-<p style="margin-top:20px;">
-
-More on Instagram:
-
-<br>
-
-<a href="https://www.instagram.com/chiraglanjewar">
-@chiraglanjewar
-</a>
-
-</p>
 
 </section>
 
@@ -326,8 +331,7 @@ More on Instagram:
 
 <p>
 I collaborate with brands in fitness, sports, wellness and lifestyle space.
-My content focuses on authentic storytelling through training routines,
-race events and active lifestyle experiences.
+My content focuses on authentic storytelling through race events and training journeys.
 </p>
 
 <ul>
@@ -335,16 +339,12 @@ race events and active lifestyle experiences.
 <li>Instagram Reels</li>
 <li>Instagram Stories</li>
 <li>Product Reviews</li>
-<li>Marathon / Event Coverage</li>
-<li>Fitness Lifestyle Promotion</li>
+<li>Marathon Event Coverage</li>
+<li>Fitness & Lifestyle Promotion</li>
 
 </ul>
 
-<p style="margin-top:20px;">
-
-For collaborations:
-
-<br><br>
+<p style="margin-top:20px">
 
 📩 <b>chiraglanjewar@gmail.com</b>
 
@@ -356,7 +356,7 @@ For collaborations:
 
 <section id="contact" class="contact">
 
-<h2>Contact & Social</h2>
+<h2>Contact</h2>
 
 <p>Email: chiraglanjewar@gmail.com</p>
 
@@ -380,6 +380,36 @@ For collaborations:
 
 </footer>
 
-</body>
+<script>
 
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+counter.innerText = '0';
+
+const updateCounter = () => {
+
+const target = +counter.getAttribute('data-target');
+
+const c = +counter.innerText;
+
+const increment = target / 200;
+
+if(c < target){
+counter.innerText = Math.ceil(c + increment);
+setTimeout(updateCounter,10);
+}else{
+counter.innerText = target;
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+</body>
 </html>
