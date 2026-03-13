@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,9 +24,12 @@ color:white;
 line-height:1.6;
 }
 
+/* HEADER */
+
 header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 10%;
 background:black;
 position:sticky;
@@ -42,6 +47,8 @@ font-weight:bold;
 nav a:hover{
 color:#ff3c00;
 }
+
+/* HERO */
 
 .hero{
 position:relative;
@@ -83,6 +90,8 @@ color:white;
 text-decoration:none;
 }
 
+/* SECTIONS */
+
 section{
 padding:70px 10%;
 }
@@ -92,12 +101,14 @@ margin-bottom:25px;
 font-size:32px;
 }
 
+/* STATS */
+
 .stats{
 display:flex;
 justify-content:space-around;
-text-align:center;
 flex-wrap:wrap;
-margin-top:40px;
+text-align:center;
+margin-top:30px;
 }
 
 .stat{
@@ -109,22 +120,32 @@ font-size:45px;
 color:#ff3c00;
 }
 
-.stat p{
-opacity:0.8;
+/* BRAND SLIDER */
+
+.slider{
+overflow:hidden;
+margin-top:30px;
 }
 
-.brands{
+.slide-track{
 display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:20px;
+animation:scroll 20s linear infinite;
 }
 
-.brand{
+.slide{
 background:#1e1e1e;
-padding:12px 18px;
-border-radius:20px;
+padding:15px 25px;
+border-radius:25px;
+margin-right:15px;
+white-space:nowrap;
 }
+
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+/* GALLERY */
 
 .gallery{
 display:grid;
@@ -138,6 +159,18 @@ width:100%;
 border-radius:10px;
 }
 
+/* IFRAME FIX */
+
+iframe{
+border-radius:10px;
+background:white;
+border:none;
+max-width:100%;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* WORK WITH ME */
+
 .work{
 background:#151515;
 padding:30px;
@@ -148,6 +181,8 @@ max-width:700px;
 .work li{
 margin-bottom:8px;
 }
+
+/* CONTACT */
 
 .contact{
 text-align:center;
@@ -168,12 +203,8 @@ background:black;
 opacity:0.6;
 }
 
-iframe{
-margin-top:20px;
-border:none;
-}
-
 </style>
+
 </head>
 
 <body>
@@ -194,10 +225,12 @@ border:none;
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <video autoplay muted loop id="bg-video">
-<source src="https://cdn.coverr.co/videos/coverr-man-running-on-a-track-1574/1080p.mp4" type="video/mp4">
+<source src="https://cdn.coverr.co/videos/coverr-man-running-on-a-track-1574/1080p.mp4">
 </video>
 
 <div class="hero-content">
@@ -213,21 +246,24 @@ View Instagram
 
 </section>
 
+<!-- ABOUT -->
+
 <section id="about">
 
 <h2>About Me</h2>
 
 <p>
-I'm Chirag Lanjewar — a fitness and lifestyle content creator passionate about
-running, marathons, cycling events, badminton and athletic lifestyle.
-I share race experiences, training routines and wellness journeys with my audience.
+I'm Chirag Lanjewar — a fitness and lifestyle content creator passionate about running,
+marathons, cycling events, badminton and athletic lifestyle.
 </p>
 
-<p style="margin-top:15px;">
+<p style="margin-top:15px">
 🏆 Ranked <b>#11 in Top 20 TikTok Influencers in Hyderabad</b> on Collabstr.
 </p>
 
 </section>
+
+<!-- STATS -->
 
 <section id="stats">
 
@@ -254,24 +290,21 @@ I share race experiences, training routines and wellness journeys with my audien
 
 </section>
 
+<!-- JOURNEY -->
+
 <section id="journey">
 
 <h2>Running Journey</h2>
 
-<p>
-My running journey started in October 2024 during the Salesforce Run where I completed my first 5K race.
-Since then I have participated in multiple endurance events including marathons and obstacle races.
-</p>
-
-<ul style="margin-top:20px">
+<ul>
 
 <li>16+ race events completed</li>
 <li>10K and Half Marathon races</li>
 <li>48 KM endurance challenge</li>
 <li>HCL Cyclothon</li>
 <li>NMDC Marathon</li>
-<li>Devil's Circuit – Asia's toughest obstacle race</li>
-<li>Ethnic Run – fitness meets fashion & culture</li>
+<li>Devil's Circuit obstacle race</li>
+<li>Ethnic Run – fitness meets culture</li>
 
 </ul>
 
@@ -283,18 +316,29 @@ height="480">
 
 </section>
 
+<!-- BRANDS -->
+
 <section id="brands">
 
 <h2>Brand Collaborations</h2>
 
-<div class="brands">
+<div class="slider">
 
-<div class="brand">Wiselife</div>
-<div class="brand">Madno</div>
-<div class="brand">Dairy Day</div>
-<div class="brand">Hombria</div>
-<div class="brand">Timber Tribe</div>
-<div class="brand">Dark Obsession Tea</div>
+<div class="slide-track">
+
+<div class="slide">Wiselife</div>
+<div class="slide">Madno</div>
+<div class="slide">Dairy Day</div>
+<div class="slide">Hombria</div>
+<div class="slide">Timber Tribe</div>
+<div class="slide">Dark Obsession Tea</div>
+
+<div class="slide">Wiselife</div>
+<div class="slide">Madno</div>
+<div class="slide">Dairy Day</div>
+<div class="slide">Hombria</div>
+
+</div>
 
 </div>
 
@@ -307,6 +351,8 @@ View Collabstr Profile
 </p>
 
 </section>
+
+<!-- GALLERY -->
 
 <section id="gallery">
 
@@ -321,33 +367,9 @@ View Collabstr Profile
 
 </div>
 
-  <section id="instagram">
-
-<h2>Latest Instagram Posts</h2>
-
-<div class="gallery">
-
-<iframe src="https://www.instagram.com/p/DVECWRAEovW/embed" width="320" height="420"></iframe>
-
-<iframe src="https://www.instagram.com/chiraglanjewar/embed" width="320" height="420"></iframe>
-
-</div>
-
-<p style="margin-top:20px">
-
-Follow my running journey on Instagram:
-
-<br><br>
-
-<a href="https://www.instagram.com/chiraglanjewar" target="_blank">
-@chiraglanjewar
-</a>
-
-</p>
-
 </section>
 
-</section>
+<!-- WORK WITH ME -->
 
 <section id="work">
 
@@ -357,7 +379,6 @@ Follow my running journey on Instagram:
 
 <p>
 I collaborate with brands in fitness, sports, wellness and lifestyle space.
-My content focuses on authentic storytelling through race events and training journeys.
 </p>
 
 <ul>
@@ -366,7 +387,7 @@ My content focuses on authentic storytelling through race events and training jo
 <li>Instagram Stories</li>
 <li>Product Reviews</li>
 <li>Marathon Event Coverage</li>
-<li>Fitness & Lifestyle Promotion</li>
+<li>Fitness Lifestyle Promotion</li>
 
 </ul>
 
@@ -380,12 +401,13 @@ My content focuses on authentic storytelling through race events and training jo
 
 </section>
 
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
 
 <h2>Contact</h2>
 
 <p>Email: chiraglanjewar@gmail.com</p>
-
 <p>Phone: +91 89894 88114</p>
 
 <div class="social">
@@ -408,25 +430,25 @@ My content focuses on authentic storytelling through race events and training jo
 
 <script>
 
-const counters = document.querySelectorAll('.counter');
+/* COUNTER ANIMATION */
 
-counters.forEach(counter => {
+const counters=document.querySelectorAll('.counter');
 
-counter.innerText = '0';
+counters.forEach(counter=>{
 
-const updateCounter = () => {
+counter.innerText='0';
 
-const target = +counter.getAttribute('data-target');
+const updateCounter=()=>{
 
-const c = +counter.innerText;
+const target=+counter.getAttribute('data-target');
+const c=+counter.innerText;
+const increment=target/200;
 
-const increment = target / 200;
-
-if(c < target){
-counter.innerText = Math.ceil(c + increment);
+if(c<target){
+counter.innerText=Math.ceil(c+increment);
 setTimeout(updateCounter,10);
 }else{
-counter.innerText = target;
+counter.innerText=target;
 }
 
 };
@@ -438,4 +460,5 @@ updateCounter();
 </script>
 
 </body>
+
 </html>
