@@ -24,7 +24,7 @@ color:white;
 line-height:1.6;
 }
 
-/* HEADER */
+/* NAVBAR */
 
 header{
 display:flex;
@@ -45,30 +45,45 @@ font-weight:bold;
 }
 
 nav a:hover{
-color:#ff3c00;
+color:#ff4d00;
 }
 
 /* HERO */
 
 .hero{
 position:relative;
-height:90vh;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-overflow:hidden;
+
+background-image:url("hero.png");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+animation:heroZoom 25s ease-in-out infinite alternate;
 }
 
-#bg-video{
+@keyframes heroZoom{
+0%{background-size:100%;}
+100%{background-size:110%;}
+}
+
+.hero::before{
+content:"";
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
-object-fit:cover;
-z-index:-1;
-filter:brightness(40%);
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero-content h1{
@@ -84,10 +99,11 @@ margin-top:10px;
 margin-top:20px;
 display:inline-block;
 padding:12px 25px;
-background:#ff3c00;
-border-radius:5px;
+background:#ff4d00;
+border-radius:6px;
 color:white;
 text-decoration:none;
+font-weight:bold;
 }
 
 /* SECTIONS */
@@ -117,7 +133,7 @@ margin:20px;
 
 .stat h3{
 font-size:45px;
-color:#ff3c00;
+color:#ff4d00;
 }
 
 /* BRAND SLIDER */
@@ -182,18 +198,6 @@ max-width:700px;
 margin-bottom:8px;
 }
 
-#instagram-feed{
-text-align:center;
-}
-
-#instagram-feed h2{
-margin-bottom:30px;
-}
-
-.elfsight-app{
-margin-top:20px;
-}
-
 /* CONTACT */
 
 .contact{
@@ -203,7 +207,7 @@ background:#111;
 
 .social a{
 margin:10px;
-color:#ff3c00;
+color:#ff4d00;
 text-decoration:none;
 display:inline-block;
 }
@@ -241,13 +245,10 @@ opacity:0.6;
 
 <section class="hero">
 
-<video autoplay muted loop id="bg-video">
-<source src="https://cdn.coverr.co/videos/coverr-man-running-on-a-track-1574/1080p.mp4">
-</video>
-
 <div class="hero-content">
 
 <h1>Chirag Lanjewar</h1>
+
 <p>Runner • Athlete • Lifestyle Creator</p>
 
 <a href="https://www.instagram.com/chiraglanjewar" target="_blank">
@@ -265,7 +266,7 @@ View Instagram
 <h2>About Me</h2>
 
 <p>
-I'm Chirag Lanjewar — a fitness and lifestyle content creator passionate about running,
+I'm Chirag Lanjewar — a lifestyle and fitness content creator passionate about running,
 marathons, cycling events, badminton and athletic lifestyle.
 </p>
 
@@ -320,6 +321,8 @@ marathons, cycling events, badminton and athletic lifestyle.
 
 </ul>
 
+<br>
+
 <iframe
 src="https://www.instagram.com/p/DVECWRAEovW/embed"
 width="400"
@@ -368,15 +371,16 @@ View Collabstr Profile
 
 <section id="gallery">
 
-</section>
+<h2>Race Moments</h2>
 
-<section id="instagram-feed">
+<div class="gallery">
 
-<h2>Latest Instagram Posts</h2>
+<img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce">
+<img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5">
+<img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf">
+<img src="https://images.unsplash.com/photo-1546484959-f2f6fda9e7c2">
 
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
-<div class="elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc" data-elfsight-app-lazy></div>
+</div>
 
 </section>
 
