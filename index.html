@@ -3,148 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Chirag Lanjewar | Athlete & Creator</title>
 
 <style>
 
 /* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI', sans-serif;
-}
-
-body{
-background:#0b0b0b;
-color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#0b0b0b;color:white;overflow-x:hidden;}
+html{scroll-behavior:smooth;}
 
 /* NAVBAR */
 header{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;align-items:center;
 padding:15px 8%;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
+nav{display:flex;gap:20px;}
+nav a{color:white;text-decoration:none;font-size:14px;}
+.menu{display:none;cursor:pointer;}
 
-nav{
-display:flex;
-gap:20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:14px;
-}
-
-.menu{
-display:none;
-cursor:pointer;
-}
-
-/* HERO */
-.hero{
-height:100vh;
+/* HERO (APPLE STYLE) */
+.apple-hero{
+height:120vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
 url("hero.png");
 background-size:cover;
 background-position:center;
+background-attachment:fixed;
 }
 
-.hero h1{
+.headline{font-size:64px;font-weight:700;}
+.sub{margin-top:15px;opacity:0.7;font-size:20px;}
+
+/* STORY */
+.story{
+min-height:110vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 20px;
+}
+.story h2{
 font-size:48px;
+max-width:750px;
+line-height:1.2;
 }
 
-.hero p{
-margin-top:10px;
-opacity:0.85;
+/* ANIMATIONS */
+.fade-up{
+opacity:0;
+transform:translateY(80px);
+transition:all 1s cubic-bezier(0.22,1,0.36,1);
+}
+.fade-up.active{
+opacity:1;
+transform:translateY(0);
 }
 
-.hero a{
-display:inline-block;
-margin-top:15px;
-padding:10px 25px;
-background:#ff4d00;
-border-radius:6px;
-text-decoration:none;
-color:white;
+.scale-in{
+opacity:0;
+transform:scale(0.9);
+transition:all 1s ease;
+}
+.scale-in.active{
+opacity:1;
+transform:scale(1);
 }
 
 /* SECTION */
-section{
-padding:80px 8%;
-}
-
-h2{
-text-align:center;
-margin-bottom:20px;
-}
+section{padding:80px 8%;}
+h2{text-align:center;margin-bottom:20px;}
 
 /* STATS */
-.stats{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
+.stats{display:flex;gap:15px;flex-wrap:wrap;}
 .stat{
-flex:1;
-background:#141414;
-padding:20px;
-border-radius:10px;
-text-align:center;
+flex:1;background:#141414;padding:20px;border-radius:10px;text-align:center;
 }
+.stat h3{color:#ff4d00;font-size:32px;}
 
-.stat h3{
-color:#ff4d00;
-font-size:32px;
+/* BRANDS PREMIUM */
+.brands-wrapper{position:relative;overflow:hidden;margin-top:30px;}
+.fade-left,.fade-right{
+position:absolute;top:0;width:80px;height:100%;z-index:2;
 }
-
-/* ULTRA PREMIUM BRANDS */
-.brands-wrapper{
-position:relative;
-overflow:hidden;
-margin-top:30px;
-}
-
-.fade-left,
-.fade-right{
-position:absolute;
-top:0;
-width:80px;
-height:100%;
-z-index:2;
-pointer-events:none;
-}
-
-.fade-left{
-left:0;
-background:linear-gradient(to right,#0b0b0b,transparent);
-}
-
-.fade-right{
-right:0;
-background:linear-gradient(to left,#0b0b0b,transparent);
-}
+.fade-left{left:0;background:linear-gradient(to right,#0b0b0b,transparent);}
+.fade-right{right:0;background:linear-gradient(to left,#0b0b0b,transparent);}
 
 .brands-track{
-display:flex;
-gap:15px;
-width:max-content;
+display:flex;gap:15px;width:max-content;
 animation:scrollBrands 30s linear infinite;
 }
 
@@ -153,19 +108,11 @@ padding:12px 22px;
 border-radius:30px;
 border:1px solid rgba(255,255,255,0.15);
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(8px);
 white-space:nowrap;
 transition:0.3s;
 }
-
-.brand:hover{
-background:#ff4d00;
-transform:scale(1.1);
-}
-
-.brands-track:hover{
-animation-play-state:paused;
-}
+.brand:hover{background:#ff4d00;transform:scale(1.1);}
+.brands-track:hover{animation-play-state:paused;}
 
 @keyframes scrollBrands{
 0%{transform:translateX(0);}
@@ -173,98 +120,52 @@ animation-play-state:paused;
 }
 
 /* INSTAGRAM */
-#instagram{
-text-align:center;
-}
-
+#instagram{text-align:center;}
 .elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc iframe{
-max-width:100%;
-border-radius:10px;
+max-width:100%;border-radius:10px;
 }
 
 /* WORK */
 .work{
-background:#141414;
-padding:25px;
-border-radius:10px;
-max-width:600px;
-margin:auto;
+background:#141414;padding:25px;border-radius:10px;
+max-width:600px;margin:auto;
 }
 
 /* FORM */
 form{
-display:flex;
-flex-direction:column;
-gap:10px;
-max-width:500px;
-margin:auto;
+display:flex;flex-direction:column;gap:10px;
+max-width:500px;margin:auto;
 }
-
-input, textarea, select{
-padding:12px;
-border:none;
-border-radius:6px;
-background:#1a1a1a;
-color:white;
+input,textarea,select{
+padding:12px;border:none;border-radius:6px;
+background:#1a1a1a;color:white;
 }
-
 button{
-background:#ff4d00;
-padding:12px;
-border:none;
-border-radius:6px;
-color:white;
-cursor:pointer;
+background:#ff4d00;padding:12px;border:none;
+border-radius:6px;color:white;cursor:pointer;
 }
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;
+padding:15px;border-radius:50%;
+font-size:22px;text-decoration:none;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-
 nav{
-display:none;
-flex-direction:column;
-position:absolute;
-top:60px;
-right:0;
-width:100%;
-background:black;
-padding:20px;
+display:none;flex-direction:column;
+position:absolute;top:60px;right:0;width:100%;
+background:black;padding:20px;
 }
+nav.active{display:flex;}
+.menu{display:block;}
 
-nav.active{
-display:flex;
-}
-
-.menu{
-display:block;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-.stats{
-flex-direction:column;
-}
-
-.fade-left,
-.fade-right{
-width:40px;
-}
-
+.headline{font-size:36px;}
+.story h2{font-size:28px;}
+.stats{flex-direction:column;}
 }
 
 </style>
@@ -277,7 +178,6 @@ width:40px;
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 <nav id="nav">
-<a href="#about">About</a>
 <a href="#stats">Stats</a>
 <a href="#brands">Brands</a>
 <a href="#instagram">Instagram</a>
@@ -287,25 +187,32 @@ width:40px;
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<section class="apple-hero">
 <div>
-<h1>Chirag Lanjewar</h1>
-<p>Runner • Athlete • Creator</p>
-<p>Open for brand collaborations & partnerships 🤝</p>
-<a href="#contact">Work With Me</a>
+<h1 class="headline">Built on Discipline.</h1>
+<p class="sub">Runner • Athlete • Creator</p>
 </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-<h2>About Me</h2>
-<p style="text-align:center;">
-Lifestyle & fitness creator passionate about running, marathons, cycling & sports content.
-</p>
+<!-- STORY -->
+<section class="story fade-up">
+<h2>From a 5KM first run… to 16+ race events.</h2>
+</section>
+
+<section class="story fade-up">
+<h2>From office runs… to half marathons & endurance challenges.</h2>
+</section>
+
+<section class="story scale-in">
+<h2>Not just running. Building a lifestyle.</h2>
+</section>
+
+<section class="story fade-up">
+<h2>Collaborating with brands that align with performance & passion.</h2>
 </section>
 
 <!-- STATS -->
-<section id="stats">
+<section id="stats" class="fade-up">
 <h2>Stats</h2>
 <div class="stats">
 <div class="stat"><h3>16+</h3><p>Events</p></div>
@@ -315,7 +222,7 @@ Lifestyle & fitness creator passionate about running, marathons, cycling & sport
 </section>
 
 <!-- BRANDS -->
-<section id="brands">
+<section id="brands" class="fade-up">
 <h2>Trusted Collaborations</h2>
 
 <div class="brands-wrapper">
@@ -354,16 +261,14 @@ Lifestyle & fitness creator passionate about running, marathons, cycling & sport
 </section>
 
 <!-- INSTAGRAM -->
-<section id="instagram">
+<section id="instagram" class="fade-up">
 <h2>Instagram</h2>
-
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <div class="elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc"></div>
-
 </section>
 
 <!-- WORK -->
-<section id="work">
+<section id="work" class="fade-up">
 <h2>Work With Me</h2>
 
 <div class="work">
@@ -380,13 +285,12 @@ Lifestyle & fitness creator passionate about running, marathons, cycling & sport
 📩 chiraglanjewar@gmail.com <br>
 📱 +91 9154986223
 </p>
-
 </div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="fade-up">
 <h2>Let's Collaborate</h2>
 
 <form action="https://formspree.io/f/xayrddzr" method="POST">
@@ -411,9 +315,25 @@ Lifestyle & fitness creator passionate about running, marathons, cycling & sport
 <a href="https://wa.me/919154986223" target="_blank" class="whatsapp">💬</a>
 
 <script>
+
+/* MENU */
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("active");
 }
+
+/* SCROLL REVEAL */
+function reveal(){
+document.querySelectorAll('.fade-up, .scale-in').forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add('active');
+}
+});
+}
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
+
 </script>
 
 </body>
