@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,195 +9,214 @@
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-scroll-behavior:smooth;
+font-family:'Segoe UI', sans-serif;
 }
 
 body{
-background:#0f0f0f;
+background:#0b0b0b;
 color:white;
-line-height:1.6;
 }
 
 /* NAVBAR */
-
 header{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
-background:black;
-position:sticky;
-top:0;
+padding:15px 8%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
 z-index:1000;
+}
+
+nav{
+display:flex;
+gap:20px;
 }
 
 nav a{
 color:white;
-margin-left:20px;
 text-decoration:none;
-font-weight:bold;
+font-size:14px;
 }
 
-nav a:hover{
-color:#ff4d00;
+.menu{
+display:none;
+cursor:pointer;
 }
 
-/* HERO */
-
+/* HERO IMAGE */
 .hero{
-position:relative;
 height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-
-background-image:url("hero.png");
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+url("hero.png");
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
-
-animation:heroZoom 25s ease-in-out infinite alternate;
-}
-
-@keyframes heroZoom{
-0%{background-size:100%;}
-100%{background-size:110%;}
-}
-
-.hero::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
 }
 
 .hero-content{
-position:relative;
-z-index:2;
+padding:0 20px;
 }
 
-.hero-content h1{
-font-size:60px;
+.hero h1{
+font-size:48px;
 }
 
-.hero-content p{
-font-size:20px;
+.hero p{
 margin-top:10px;
+opacity:0.8;
 }
 
-.hero-content a{
-margin-top:20px;
+.hero a{
 display:inline-block;
-padding:12px 25px;
+margin-top:15px;
+padding:10px 25px;
 background:#ff4d00;
 border-radius:6px;
-color:white;
 text-decoration:none;
-font-weight:bold;
+color:white;
 }
 
-/* SECTIONS */
-
+/* SECTION */
 section{
-padding:70px 10%;
+padding:80px 8%;
 }
 
 h2{
 margin-bottom:25px;
-font-size:32px;
+text-align:center;
 }
 
 /* STATS */
-
 .stats{
 display:flex;
-justify-content:space-around;
+gap:15px;
 flex-wrap:wrap;
-text-align:center;
-margin-top:30px;
 }
 
 .stat{
-margin:20px;
+flex:1;
+background:#141414;
+padding:20px;
+border-radius:10px;
+text-align:center;
 }
 
 .stat h3{
-font-size:45px;
 color:#ff4d00;
+font-size:32px;
 }
 
-/* BRAND SLIDER */
-
-.slider{
-overflow:hidden;
-margin-top:30px;
-}
-
-.slide-track{
+/* BRANDS */
+.brands{
 display:flex;
-animation:scroll 20s linear infinite;
+flex-wrap:wrap;
+justify-content:center;
+gap:12px;
 }
 
-.slide{
-background:#1e1e1e;
-padding:15px 25px;
+.brand{
+padding:10px 20px;
 border-radius:25px;
-margin-right:15px;
-white-space:nowrap;
+border:1px solid rgba(255,255,255,0.2);
+font-size:14px;
+transition:0.3s;
 }
 
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+.brand:hover{
+background:#ff4d00;
 }
 
-/* IFRAME FIX */
-
-iframe{
-border-radius:10px;
-background:white;
-border:none;
-max-width:100%;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* WORK WITH ME */
-
+/* WORK */
 .work{
-background:#151515;
-padding:30px;
+background:#141414;
+padding:25px;
 border-radius:10px;
-max-width:700px;
+max-width:600px;
+margin:auto;
 }
 
-/* CONTACT */
-
-.contact{
-text-align:center;
-background:#111;
+/* FORM */
+form{
+display:flex;
+flex-direction:column;
+gap:10px;
+max-width:500px;
+margin:auto;
 }
 
-.social a{
-margin:10px;
-color:#ff4d00;
+input, textarea, select{
+padding:12px;
+border:none;
+border-radius:6px;
+background:#1a1a1a;
+color:white;
+}
+
+button{
+background:#ff4d00;
+padding:12px;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
 text-decoration:none;
-display:inline-block;
 }
 
-footer{
-text-align:center;
-padding:20px;
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:0;
+width:100%;
 background:black;
-opacity:0.6;
+padding:20px;
+}
+
+nav.active{
+display:flex;
+}
+
+.menu{
+display:block;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.stats{
+flex-direction:column;
+}
+
 }
 
 </style>
@@ -208,185 +226,93 @@ opacity:0.6;
 <body>
 
 <header>
-
 <h2>CHIRAG</h2>
 
-<nav>
+<div class="menu" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
 <a href="#about">About</a>
 <a href="#stats">Stats</a>
-<a href="#journey">Journey</a>
 <a href="#brands">Brands</a>
-<a href="#instagram">Instagram</a>
-<a href="#work">Work With Me</a>
+<a href="#work">Work</a>
 <a href="#contact">Contact</a>
 </nav>
 
 </header>
 
 <!-- HERO -->
-
 <section class="hero">
 
 <div class="hero-content">
-
 <h1>Chirag Lanjewar</h1>
+<p>Runner • Athlete • Creator</p>
 
-<p>Runner • Athlete • Lifestyle Creator</p>
+<p>Open for brand collaborations & partnerships 🤝</p>
 
-<a href="https://www.instagram.com/chiraglanjewar" target="_blank">
-View Instagram
-</a>
-
+<a href="#contact">Work With Me</a>
 </div>
 
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
-
 <h2>About Me</h2>
-
-<p>
-I'm Chirag Lanjewar — a lifestyle and fitness content creator passionate about running,
-marathons, cycling events, badminton and athletic lifestyle.
+<p style="text-align:center;">
+Lifestyle & fitness creator actively involved in marathons, cycling events, badminton & sports content.
 </p>
-
-<p style="margin-top:15px">
-🏆 Ranked <b>#11 in Top 20 TikTok Influencers in Hyderabad</b> on Collabstr.
-</p>
-
 </section>
 
 <!-- STATS -->
-
 <section id="stats">
-
-<h2>Athlete Stats</h2>
+<h2>Stats</h2>
 
 <div class="stats">
-
-<div class="stat">
-<h3 class="counter" data-target="16">0</h3>
-<p>Race Events</p>
+<div class="stat"><h3>16+</h3><p>Events</p></div>
+<div class="stat"><h3>600+</h3><p>KM Run</p></div>
+<div class="stat"><h3>10+</h3><p>Brands</p></div>
 </div>
-
-<div class="stat">
-<h3 class="counter" data-target="600">0</h3>
-<p>KM Run</p>
-</div>
-
-<div class="stat">
-<h3 class="counter" data-target="10">0</h3>
-<p>Brand Collaborations</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- JOURNEY -->
-
-<section id="journey">
-
-<h2>Running Journey</h2>
-
-<ul>
-
-<li>16+ race events completed</li>
-<li>10K and Half Marathon races</li>
-<li>48 KM endurance challenge</li>
-<li>HCL Cyclothon</li>
-<li>NMDC Marathon</li>
-<li>Devil's Circuit obstacle race</li>
-<li>Ethnic Run – fitness meets culture</li>
-
-</ul>
-
-<br>
-
-<iframe
-src="https://www.instagram.com/p/DVECWRAEovW/embed"
-width="400"
-height="480">
-</iframe>
 
 </section>
 
 <!-- BRANDS -->
-
 <section id="brands">
+<h2>Trusted Collaborations</h2>
 
-<h2>Brand Collaborations</h2>
-
-<div class="slider">
-
-<div class="slide-track">
-
-<div class="slide">Wiselife</div>
-<div class="slide">Madno</div>
-<div class="slide">Dairy Day</div>
-<div class="slide">Hombria</div>
-<div class="slide">Timber Tribe</div>
-<div class="slide">Dark Obsession Tea</div>
-<div class="slide">iFinish</div>
-<div class="slide">BCF Official</div>
-<div class="slide">Beast Drive</div>
-
-<div class="slide">Wiselife</div>
-<div class="slide">Madno</div>
-<div class="slide">Dairy Day</div>
-
+<div class="brands">
+<div class="brand">Wiselife</div>
+<div class="brand">Madno</div>
+<div class="brand">Dairy Day</div>
+<div class="brand">Hombria</div>
+<div class="brand">Timber Tribe</div>
+<div class="brand">Dark Obsession Tea</div>
+<div class="brand">iFinish</div>
+<div class="brand">BCF Official</div>
+<div class="brand">Beast Drive</div>
+<div class="brand">BeYou**ng</div>
+<div class="brand">Yung'r</div>
 </div>
-
-</div>
-
-<p style="margin-top:20px">
-
-<a href="https://collabstr.com/chiraglanjewar" target="_blank">
-View Collabstr Profile
-</a>
-
-</p>
 
 </section>
 
-<!-- INSTAGRAM FEED -->
-
-<section id="instagram">
-
-<h2>Instagram</h2>
-
-<script src="https://elfsightcdn.com/platform.js" async></script>
-
-<div class="elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc" data-elfsight-app-lazy></div>
-
-</section>
-
-<!-- WORK WITH ME -->
-
+<!-- WORK -->
 <section id="work">
-
 <h2>Work With Me</h2>
 
 <div class="work">
-
 <p>
-I collaborate with brands in fitness, sports, wellness and lifestyle space.
+I collaborate with brands in fitness, sports, lifestyle & fashion — creating high-quality, engaging content.
 </p>
 
-<ul>
-
-<li>Instagram Reels</li>
-<li>Instagram Stories</li>
-<li>Product Reviews</li>
-<li>Marathon Event Coverage</li>
-<li>Fitness Lifestyle Promotion</li>
-
+<ul style="margin-top:10px;">
+<li>🎬 Instagram Reels</li>
+<li>📸 Product Shoots</li>
+<li>🏃 Event Coverage</li>
+<li>📢 Promotions</li>
 </ul>
 
-<p style="margin-top:20px">
-📩 <b>chiraglanjewar@gmail.com</b>
+<p style="margin-top:15px;">
+📩 chiraglanjewar@gmail.com <br>
+📱 +91 9154986223
 </p>
 
 </div>
@@ -394,61 +320,35 @@ I collaborate with brands in fitness, sports, wellness and lifestyle space.
 </section>
 
 <!-- CONTACT -->
+<section id="contact">
+<h2>Let's Collaborate</h2>
 
-<section id="contact" class="contact">
+<form action="https://formspree.io/f/xayrddzr" method="POST">
+<input type="text" name="brand" placeholder="Brand Name" required>
+<input type="email" name="email" placeholder="Email" required>
 
-<h2>Contact</h2>
+<select name="type">
+<option>Collaboration Type</option>
+<option>Paid</option>
+<option>Barter</option>
+<option>Event Invite</option>
+</select>
 
-<p>Email: chiraglanjewar@gmail.com</p>
-<p>Phone: +91 9154986223</p>
+<textarea name="message" placeholder="Campaign details..." required></textarea>
 
-<div class="social">
-
-<a href="https://www.instagram.com/chiraglanjewar">Instagram</a>
-
-<a href="https://www.linkedin.com/in/chirag-lanjewar-8630b3128/">LinkedIn</a>
-
-<a href="https://collabstr.com/chiraglanjewar">Collabstr</a>
-
-</div>
+<button type="submit">Send Request</button>
+</form>
 
 </section>
 
-<footer>
-
-<p>© 2026 Chirag Lanjewar</p>
-
-</footer>
+<!-- WHATSAPP -->
+<a href="https://wa.me/919154986223" target="_blank" class="whatsapp">💬</a>
 
 <script>
-
-const counters=document.querySelectorAll('.counter');
-
-counters.forEach(counter=>{
-
-counter.innerText='0';
-
-const updateCounter=()=>{
-
-const target=+counter.getAttribute('data-target');
-const c=+counter.innerText;
-const increment=target/200;
-
-if(c<target){
-counter.innerText=Math.ceil(c+increment);
-setTimeout(updateCounter,10);
-}else{
-counter.innerText=target+"+";
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("active");
 }
-
-};
-
-updateCounter();
-
-});
-
 </script>
 
 </body>
-
 </html>
