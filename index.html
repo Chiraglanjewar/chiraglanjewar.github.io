@@ -3,103 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chirag Lanjewar | Athlete & Creator</title>
 
 <style>
 
 /* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:#0b0b0b;color:white;overflow-x:hidden;}
+body{background:#0b0b0b;color:white;}
 html{scroll-behavior:smooth;}
 
 /* NAVBAR */
 header{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;align-items:center;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:15px 8%;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
+
 nav{display:flex;gap:20px;}
 nav a{color:white;text-decoration:none;font-size:14px;}
 .menu{display:none;cursor:pointer;}
 
-/* HERO (APPLE STYLE) */
-.apple-hero{
-height:120vh;
+/* HERO */
+.hero{
+height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 background:
-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
 url("hero.png");
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
 }
 
-.headline{font-size:64px;font-weight:700;}
-.sub{margin-top:15px;opacity:0.7;font-size:20px;}
+.hero h1{font-size:48px;}
+.hero p{margin-top:10px;opacity:0.85;}
 
-/* STORY */
-.story{
-min-height:110vh;
-display:flex;
-align-items:center;
-justify-content:center;
+.hero a{
+display:inline-block;
+margin-top:15px;
+padding:10px 25px;
+background:#ff4d00;
+border-radius:6px;
+text-decoration:none;
+color:white;
+}
+
+/* SECTION */
+section{
+padding:80px 8%;
+}
+
+.alt{
+background:#111;
+}
+
+h2{
 text-align:center;
-padding:0 20px;
-}
-.story h2{
-font-size:48px;
-max-width:750px;
-line-height:1.2;
+margin-bottom:20px;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 .fade-up{
 opacity:0;
-transform:translateY(80px);
-transition:all 1s cubic-bezier(0.22,1,0.36,1);
+transform:translateY(50px);
+transition:0.8s ease;
 }
+
 .fade-up.active{
 opacity:1;
 transform:translateY(0);
 }
 
-.scale-in{
-opacity:0;
-transform:scale(0.9);
-transition:all 1s ease;
-}
-.scale-in.active{
-opacity:1;
-transform:scale(1);
-}
-
-/* SECTION */
-section{padding:80px 8%;}
-h2{text-align:center;margin-bottom:20px;}
-
 /* STATS */
-.stats{display:flex;gap:15px;flex-wrap:wrap;}
-.stat{
-flex:1;background:#141414;padding:20px;border-radius:10px;text-align:center;
+.stats{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
-.stat h3{color:#ff4d00;font-size:32px;}
 
-/* BRANDS PREMIUM */
-.brands-wrapper{position:relative;overflow:hidden;margin-top:30px;}
-.fade-left,.fade-right{
-position:absolute;top:0;width:80px;height:100%;z-index:2;
+.stat{
+flex:1;
+background:#141414;
+padding:20px;
+border-radius:10px;
+text-align:center;
 }
-.fade-left{left:0;background:linear-gradient(to right,#0b0b0b,transparent);}
-.fade-right{right:0;background:linear-gradient(to left,#0b0b0b,transparent);}
+
+.stat h3{
+color:#ff4d00;
+font-size:32px;
+}
+
+/* BRANDS */
+.brands-wrapper{
+position:relative;
+overflow:hidden;
+margin-top:30px;
+}
+
+.fade-left,.fade-right{
+position:absolute;
+top:0;
+width:80px;
+height:100%;
+z-index:2;
+}
+
+.fade-left{
+left:0;
+background:linear-gradient(to right,#0b0b0b,transparent);
+}
+
+.fade-right{
+right:0;
+background:linear-gradient(to left,#0b0b0b,transparent);
+}
 
 .brands-track{
-display:flex;gap:15px;width:max-content;
+display:flex;
+gap:15px;
+width:max-content;
 animation:scrollBrands 30s linear infinite;
 }
 
@@ -111,8 +144,15 @@ background:rgba(255,255,255,0.05);
 white-space:nowrap;
 transition:0.3s;
 }
-.brand:hover{background:#ff4d00;transform:scale(1.1);}
-.brands-track:hover{animation-play-state:paused;}
+
+.brand:hover{
+background:#ff4d00;
+transform:scale(1.1);
+}
+
+.brands-track:hover{
+animation-play-state:paused;
+}
 
 @keyframes scrollBrands{
 0%{transform:translateX(0);}
@@ -122,50 +162,78 @@ transition:0.3s;
 /* INSTAGRAM */
 #instagram{text-align:center;}
 .elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc iframe{
-max-width:100%;border-radius:10px;
+max-width:100%;
+border-radius:10px;
 }
 
 /* WORK */
 .work{
-background:#141414;padding:25px;border-radius:10px;
-max-width:600px;margin:auto;
+background:#141414;
+padding:25px;
+border-radius:10px;
+max-width:600px;
+margin:auto;
 }
 
 /* FORM */
 form{
-display:flex;flex-direction:column;gap:10px;
-max-width:500px;margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+max-width:500px;
+margin:auto;
 }
+
 input,textarea,select{
-padding:12px;border:none;border-radius:6px;
-background:#1a1a1a;color:white;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#1a1a1a;
+color:white;
 }
+
 button{
-background:#ff4d00;padding:12px;border:none;
-border-radius:6px;color:white;cursor:pointer;
+background:#ff4d00;
+padding:12px;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
 }
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;
-padding:15px;border-radius:50%;
-font-size:22px;text-decoration:none;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
 }
 
 /* MOBILE */
 @media(max-width:768px){
+
 nav{
-display:none;flex-direction:column;
-position:absolute;top:60px;right:0;width:100%;
-background:black;padding:20px;
+display:none;
+flex-direction:column;
+position:absolute;
+top:60px;
+right:0;
+width:100%;
+background:black;
+padding:20px;
 }
+
 nav.active{display:flex;}
 .menu{display:block;}
 
-.headline{font-size:36px;}
-.story h2{font-size:28px;}
+.hero h1{font-size:32px;}
 .stats{flex-direction:column;}
+
 }
 
 </style>
@@ -187,42 +255,29 @@ nav.active{display:flex;}
 </header>
 
 <!-- HERO -->
-<section class="apple-hero">
+<section class="hero">
 <div>
-<h1 class="headline">Built on Discipline.</h1>
-<p class="sub">Runner • Athlete • Creator</p>
+<h1>Chirag Lanjewar</h1>
+<p>Runner • Athlete • Creator</p>
+<p>Open for brand collaborations 🤝</p>
+<a href="#contact">Work With Me</a>
 </div>
-</section>
-
-<!-- STORY -->
-<section class="story fade-up">
-<h2>From a 5KM first run… to 16+ race events.</h2>
-</section>
-
-<section class="story fade-up">
-<h2>From office runs… to half marathons & endurance challenges.</h2>
-</section>
-
-<section class="story scale-in">
-<h2>Not just running. Building a lifestyle.</h2>
-</section>
-
-<section class="story fade-up">
-<h2>Collaborating with brands that align with performance & passion.</h2>
 </section>
 
 <!-- STATS -->
 <section id="stats" class="fade-up">
 <h2>Stats</h2>
+
 <div class="stats">
 <div class="stat"><h3>16+</h3><p>Events</p></div>
 <div class="stat"><h3>600+</h3><p>KM Run</p></div>
 <div class="stat"><h3>10+</h3><p>Brands</p></div>
 </div>
+
 </section>
 
 <!-- BRANDS -->
-<section id="brands" class="fade-up">
+<section id="brands" class="fade-up alt">
 <h2>Trusted Collaborations</h2>
 
 <div class="brands-wrapper">
@@ -243,7 +298,6 @@ nav.active{display:flex;}
 <div class="brand">BeYou**ng</div>
 <div class="brand">Yung'r</div>
 
-<!-- duplicate -->
 <div class="brand">Wiselife</div>
 <div class="brand">Madno</div>
 <div class="brand">Dairy Day</div>
@@ -258,17 +312,20 @@ nav.active{display:flex;}
 
 </div>
 </div>
+
 </section>
 
 <!-- INSTAGRAM -->
 <section id="instagram" class="fade-up">
 <h2>Instagram</h2>
+
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <div class="elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc"></div>
+
 </section>
 
 <!-- WORK -->
-<section id="work" class="fade-up">
+<section id="work" class="fade-up alt">
 <h2>Work With Me</h2>
 
 <div class="work">
@@ -285,6 +342,7 @@ nav.active{display:flex;}
 📩 chiraglanjewar@gmail.com <br>
 📱 +91 9154986223
 </p>
+
 </div>
 
 </section>
@@ -294,38 +352,34 @@ nav.active{display:flex;}
 <h2>Let's Collaborate</h2>
 
 <form action="https://formspree.io/f/xayrddzr" method="POST">
-<input type="text" name="brand" placeholder="Brand Name" required>
-<input type="email" name="email" placeholder="Email" required>
+<input type="text" placeholder="Brand Name" required>
+<input type="email" placeholder="Email" required>
 
-<select name="type">
+<select>
 <option>Collaboration Type</option>
 <option>Paid</option>
 <option>Barter</option>
 <option>Event Invite</option>
 </select>
 
-<textarea name="message" placeholder="Campaign details..." required></textarea>
+<textarea placeholder="Campaign details..." required></textarea>
 
 <button type="submit">Send Request</button>
 </form>
 
 </section>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/919154986223" target="_blank" class="whatsapp">💬</a>
 
 <script>
 
-/* MENU */
 function toggleMenu(){
 document.getElementById("nav").classList.toggle("active");
 }
 
-/* SCROLL REVEAL */
 function reveal(){
-document.querySelectorAll('.fade-up, .scale-in').forEach(el=>{
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
+document.querySelectorAll('.fade-up').forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
 el.classList.add('active');
 }
 });
