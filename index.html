@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +51,7 @@ display:none;
 cursor:pointer;
 }
 
-/* HERO IMAGE */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -66,17 +65,13 @@ background-size:cover;
 background-position:center;
 }
 
-.hero-content{
-padding:0 20px;
-}
-
 .hero h1{
 font-size:48px;
 }
 
 .hero p{
 margin-top:10px;
-opacity:0.8;
+opacity:0.85;
 }
 
 .hero a{
@@ -95,8 +90,8 @@ padding:80px 8%;
 }
 
 h2{
-margin-bottom:25px;
 text-align:center;
+margin-bottom:20px;
 }
 
 /* STATS */
@@ -119,24 +114,72 @@ color:#ff4d00;
 font-size:32px;
 }
 
-/* BRANDS */
-.brands{
+/* ULTRA PREMIUM BRANDS */
+.brands-wrapper{
+position:relative;
+overflow:hidden;
+margin-top:30px;
+}
+
+.fade-left,
+.fade-right{
+position:absolute;
+top:0;
+width:80px;
+height:100%;
+z-index:2;
+pointer-events:none;
+}
+
+.fade-left{
+left:0;
+background:linear-gradient(to right,#0b0b0b,transparent);
+}
+
+.fade-right{
+right:0;
+background:linear-gradient(to left,#0b0b0b,transparent);
+}
+
+.brands-track{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:12px;
+gap:15px;
+width:max-content;
+animation:scrollBrands 30s linear infinite;
 }
 
 .brand{
-padding:10px 20px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,0.2);
-font-size:14px;
+padding:12px 22px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.15);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(8px);
+white-space:nowrap;
 transition:0.3s;
 }
 
 .brand:hover{
 background:#ff4d00;
+transform:scale(1.1);
+}
+
+.brands-track:hover{
+animation-play-state:paused;
+}
+
+@keyframes scrollBrands{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* INSTAGRAM */
+#instagram{
+text-align:center;
+}
+
+.elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc iframe{
+max-width:100%;
+border-radius:10px;
 }
 
 /* WORK */
@@ -217,68 +260,70 @@ font-size:32px;
 flex-direction:column;
 }
 
+.fade-left,
+.fade-right{
+width:40px;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
 <h2>CHIRAG</h2>
-
 <div class="menu" onclick="toggleMenu()">☰</div>
 
 <nav id="nav">
 <a href="#about">About</a>
 <a href="#stats">Stats</a>
 <a href="#brands">Brands</a>
+<a href="#instagram">Instagram</a>
 <a href="#work">Work</a>
 <a href="#contact">Contact</a>
 </nav>
-
 </header>
 
 <!-- HERO -->
 <section class="hero">
-
-<div class="hero-content">
+<div>
 <h1>Chirag Lanjewar</h1>
 <p>Runner • Athlete • Creator</p>
-
 <p>Open for brand collaborations & partnerships 🤝</p>
-
 <a href="#contact">Work With Me</a>
 </div>
-
 </section>
 
 <!-- ABOUT -->
 <section id="about">
 <h2>About Me</h2>
 <p style="text-align:center;">
-Lifestyle & fitness creator actively involved in marathons, cycling events, badminton & sports content.
+Lifestyle & fitness creator passionate about running, marathons, cycling & sports content.
 </p>
 </section>
 
 <!-- STATS -->
 <section id="stats">
 <h2>Stats</h2>
-
 <div class="stats">
 <div class="stat"><h3>16+</h3><p>Events</p></div>
 <div class="stat"><h3>600+</h3><p>KM Run</p></div>
 <div class="stat"><h3>10+</h3><p>Brands</p></div>
 </div>
-
 </section>
 
 <!-- BRANDS -->
 <section id="brands">
 <h2>Trusted Collaborations</h2>
 
-<div class="brands">
+<div class="brands-wrapper">
+<div class="fade-left"></div>
+<div class="fade-right"></div>
+
+<div class="brands-track">
+
 <div class="brand">Wiselife</div>
 <div class="brand">Madno</div>
 <div class="brand">Dairy Day</div>
@@ -290,7 +335,30 @@ Lifestyle & fitness creator actively involved in marathons, cycling events, badm
 <div class="brand">Beast Drive</div>
 <div class="brand">BeYou**ng</div>
 <div class="brand">Yung'r</div>
+
+<!-- duplicate -->
+<div class="brand">Wiselife</div>
+<div class="brand">Madno</div>
+<div class="brand">Dairy Day</div>
+<div class="brand">Hombria</div>
+<div class="brand">Timber Tribe</div>
+<div class="brand">Dark Obsession Tea</div>
+<div class="brand">iFinish</div>
+<div class="brand">BCF Official</div>
+<div class="brand">Beast Drive</div>
+<div class="brand">BeYou**ng</div>
+<div class="brand">Yung'r</div>
+
 </div>
+</div>
+</section>
+
+<!-- INSTAGRAM -->
+<section id="instagram">
+<h2>Instagram</h2>
+
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-2229b822-98a8-4f43-a9e6-c90598b718fc"></div>
 
 </section>
 
@@ -299,14 +367,12 @@ Lifestyle & fitness creator actively involved in marathons, cycling events, badm
 <h2>Work With Me</h2>
 
 <div class="work">
-<p>
-I collaborate with brands in fitness, sports, lifestyle & fashion — creating high-quality, engaging content.
-</p>
+<p>I collaborate with brands across fitness, sports, lifestyle & fashion.</p>
 
 <ul style="margin-top:10px;">
-<li>🎬 Instagram Reels</li>
-<li>📸 Product Shoots</li>
-<li>🏃 Event Coverage</li>
+<li>🎬 Reels</li>
+<li>📸 Shoots</li>
+<li>🏃 Events</li>
 <li>📢 Promotions</li>
 </ul>
 
